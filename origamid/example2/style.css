@@ -1,0 +1,90 @@
+body, ul, li, p {
+  margin: 0;
+  padding: 0;
+  font-size: 1.3rem;
+  font-family: Arial;
+  list-style: none;
+}
+
+body {
+  margin-bottom: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.header {
+  background: #1d1e20;
+  padding: 20px;
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  
+}
+
+.menu {
+  display: flex;
+}
+
+.menu li {
+  margin-left: 10px;
+}
+
+.menu li a {
+  display: block;
+  padding: 10px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 100px;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 1000px;
+  padding: 0 10px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.grid > div:nth-child(n + 4) {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.grid > div.anuncio {
+  grid-column: 1;
+  grid-row: 2 / 5;
+
+  display: block;
+}
+
+@media(max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .grid > div:nth-child(n + 4) {
+    display: block;
+  }
+
+  .grid > div.anuncio {
+    grid-column: auto;
+    grid-row: auto;
+    order: -1;
+  }
+}
+
